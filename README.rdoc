@@ -1,0 +1,19 @@
+= sinatra-mongoid-heroku
+
+This is just a simple boilerplate for me to use when starting a new project.
+It's got sinatra, mongoid, thin, and foreman in it. Mind that you must gitignore the Procfile before pushing to Heroku if you're using Bamboo, otherwise it'll break.
+
+== ENV variables
+
+For those who don't know how to deal with this, the config/mongoid.yml uses ENV that should be in your ~/.bash_profile like this in your dev computer:
+
+	export MONGOID_HOST="dbhost"
+	export MONGOID_PORT="27017"
+	export MONGOID_USER="user"
+	export MONGOID_PASS="pass"
+	export MONGOID_DATABASE="db"
+	export RACK_ENV="development"
+	
+And you should add them to your Heroku account like this:
+
+	$ heroku config:add ENV_VARIABLE=value
